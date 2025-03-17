@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pole Slide Sound</title>
+</head>
+<body>
+    <audio id="poleSlideSound" src="sounds/pole_slide.ogg"></audio>
+    <script>
+        // Funkce pro přehrání zvuku
+        function playSound() {
+            const audio = document.getElementById("poleSlideSound");
+            audio.play();
+        }
+
+        // Poslouchání zpráv z Lua
+        window.addEventListener("message", function(event) {
+            if (event.data.type === "playSound") {
+                playSound();
+            }
+        });
+    </script>
+</body>
+</html>
